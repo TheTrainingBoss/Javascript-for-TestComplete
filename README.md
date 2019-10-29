@@ -1,7 +1,7 @@
 # Table of Content
 
 
-![Introduction](./Introduction/readme.md)
+[Introduction](./Introduction/readme.md)
 ------------
 Getting Started
 ---------------
