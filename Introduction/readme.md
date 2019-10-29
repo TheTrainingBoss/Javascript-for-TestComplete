@@ -11,10 +11,11 @@ Metro apps, JavaScript frameworks, etc.  However, all the lessons in this worksh
 
 The easiest way to run JavaScript code without much setup is to use a console application.
 Here are a few popular browsers that come with their own JavaScript console:
-Safari can be downloaded from http://www.apple.com/safari/download/
-Chrome can be downloaded from https://www.google.com/intl/en/chrome/browser/
-Firefox can be downloaded from http://www.mozilla.org/en-US/firefox/new/
-Internet Explorer can be downloaded from http://windows.microsoft.com/en-US/internet-explorer/downloads/ie/
+- Safari can be downloaded from http://www.apple.com/safari/download/
+- Chrome can be downloaded from https://www.google.com/intl/en/chrome/browser/
+- Firefox can be downloaded from http://www.mozilla.org/en-US/firefox/new/
+- Internet Explorer can be downloaded from http://windows.microsoft.com/en-US/internet-explorer/downloads/ie/
+
 See the Consoles topic for more information on configuring the consoles and running
 JavaScript code.
 
