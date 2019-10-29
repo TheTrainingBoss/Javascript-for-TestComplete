@@ -3,7 +3,7 @@
 
 [Introduction](./Introduction/readme.md)
 ------------
-Getting Started
+[Getting Started](./Getting&#32;Started/readme.md)
 ---------------
 The Basics
 -----------
