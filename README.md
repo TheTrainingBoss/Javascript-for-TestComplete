@@ -5,7 +5,7 @@
 ------------
 [Getting Started](./Getting&#32;Started/readme.md)
 ---------------
-The Basics
+[The Basics](./Basics/readme.md)
 -----------
 Functions and Parameters
 ------------------------
