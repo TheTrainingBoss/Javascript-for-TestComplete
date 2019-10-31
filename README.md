@@ -7,7 +7,7 @@
 ---------------
 [The Basics](./Basics/readme.md)
 -----------
-Functions and Parameters
+[Functions and Parameters](./Functions&#32;and&#32;Parameters/readme.md)
 ------------------------
 Native Objects
 --------------
