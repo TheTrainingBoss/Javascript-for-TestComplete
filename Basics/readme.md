@@ -17,7 +17,7 @@ declaration that tells JavaScript what type the variable is. Type is inferred au
 based on the data assigned to the variable. JavaScript base types are number, string,
 boolean, function, object, null or undefined.
 
-```
+```javascript
 var pizza = "deep dish";
 var count = 2;
 var isEnoughPizza = false;
@@ -26,7 +26,7 @@ var isEnoughPizza = false;
 It's best practice to combine all your variable declarations under a single var at the top of
 your code (more on why in the Scope topic).
 
-```
+```javascript
 var pizza, count, isEnoughPizza;
 pizza = "deep dish";
 count = 2;
@@ -37,7 +37,7 @@ Each of these primitive types has a corresponding "wrapper" object, complete wit
 own methods and properties. Wrapper objects are created automatically by JavaScript
 when methods are called.
 
-```
+```javascript
 var messyString, cleanString;
 messyString = " thiS iS a meSsy sTring ";
 cleanString = messyString.trim().toLowerCase().replace("messy", "clean");
@@ -58,7 +58,7 @@ operator to compare to a particular type. Any object, including the built-in Arr
 Error and RegExp all return true when using instanceof against Object. Take a careful
 look through the variable declarations, assignments and output in the example below.
 
-```
+```javascript
 var pizza = "deep dish",
 count = 2,
 isEnoughPizza = false,
@@ -85,7 +85,7 @@ There is a single, one-size-fits-all, numeric type in JavaScript. Numbers can be
 fit your needs, that is, a number can be assigned an integer value, a floating point number,
 hexadecimal and scientific notation.
 
-```
+```javascript
 var myInt = 123;
 var myFloating = 123.456;
 var myHex = 0x123456;
@@ -102,7 +102,7 @@ always exact. For example, 0.1 or 1/10 when converted to binary results in a rep
 sequence of digits. This may not be apparent until you use the number in a calculation. The
 snippet below adds .1 to .2 and doesn't end up as .3.
 
-```
+```javascript
 var unexpectedResult = 0.1 + 0.2;
 console.log(unexpectedResult); // 0.30000000000000004
 ```
@@ -110,7 +110,7 @@ console.log(unexpectedResult); // 0.30000000000000004
 You can use the built-in Math object's round() method to minimize some of these errors.
 You can bump the size of the number up, round the number and then scale it back down.
 
-```
+```javascript
 var myNum = Math.round((0.1 + 0.2) * 100) / 100;
 console.log(myNum); // .3
 ```
@@ -122,7 +122,7 @@ NaN is a global property that indicates "Not A Number". You might expect to see 
 value returned if a Math function fails. You can use the global isNaN() method to test
 for this condition -- don't try to use an equality operator.
 
-```
+```javascript
 console.log(isNaN(123)); // false
 console.log(isNaN(NaN)); // true
 // don't use equality operators
@@ -132,7 +132,7 @@ console.log(NaN === NaN); // false
 Infinity is a number that is greater than all other numbers. You can use the isFinite()
 method to check for infinity.
 
-```
+```javascript
 console.log(Infinity > 123456); // true
 ```
 
@@ -142,13 +142,13 @@ Strings are series of characters placed between matching double or single quotes
 no specific 'Character' type, other than a string that contains a single element. String
 literals are declared by surrounding characters with single or double quotes.
 
-```
+```javascript
 var version = '1.2.1.34';
 ```
 
 Use the concatenation operator "+" to glue string fragments together:
 
-```
+```javascript
 var major = '1',
 minor = '2',
 revision = '1',
@@ -164,7 +164,7 @@ A variable becomes a boolean type when assigned true or false. The example below
 as you might expect, where the "loggedIn" variable is a boolean type and evaluates to
 true.
 
-```
+```javascript
 var loggedIn, authenticated, hasPermissions;
 authenticated = true;
 hasPermissions = true;
@@ -181,7 +181,7 @@ not aware of the rules. The example below assigns the string "false". Used in an
 statement, the string variable is true if it contains any characters and false if it does
 not. Please see the Comparisons topic for a thorough discussion of these issues.
 
-```
+```javascript
 var loggedIn;
 loggedIn = "false";
 console.log(typeof(loggedIn)); // outputs "string"
@@ -195,6 +195,7 @@ console.log("blank loggedIn"); // never runs this
 ```
 
 ## Operators
+
 ### Arithmetic
 
 While the arithmetic operations are conceptually easy to understand, conversion between
@@ -211,7 +212,7 @@ treated as strings. The second example performs addition on 1+2+4=7, encounters 
 and concatenates to return "73". If you have numeric data stored in string form, use
 parseInt(value) or parseFloat(value) to force conversion to the Number type.
 
-```
+```javascript
 // "1" is a string, the rest are concatenated
 console.log("1" + 2 + 4 + "3"); // 1243
 // addition performed on first three operands
@@ -225,7 +226,7 @@ dealing with hexadecimal color strings. parseInt() takes a second parameter to s
 parsed string's base. To convert from a hex string to a decimal, pass 16 as the base. To
 reverse the process, call the number's toString() method and pass the base to convert to.
 
-```
+```javascript
 // 255 - hex to decimal
 console.log(parseInt("ff", 16));
 // "ff" - decimal to hex
@@ -248,7 +249,7 @@ represented accurately. The last two examples show how .7-.4 does not result in 
 ensure an accurate result, scale the operands up to remove the decimal point, have your
 fun, then scale the result back.
 
-```
+```javascript
 console.log(7 - 4); // 3
 console.log('7' - 4); // 3
 console.log(.7 - .4); // 0.29999999999999993
@@ -262,7 +263,7 @@ string variable in the example below is converted to a number before multiplying
 Multiplying fractions can also surface floating point math issues as shown in the last line of
 code below where .1 * .1 does not result in .01.
 
-```
+```javascript
 var price, salesTaxPercent, tax;
 price = "123.23";
 salesTaxPercent = .0725;
@@ -280,7 +281,7 @@ display purposes and not used for further calculation, you can use the Number's 
 below first logs the results of a division where the result is off by a tiny fractional amount.
 The second logging statement uses toFixed() to mask the issue for display purposes.
 
-```
+```javascript
 var price, discount, discountAmount;
 price = 123.12;
 discount = "5";
@@ -296,7 +297,7 @@ negative number returns -Infinity. The isFinite() function returns false if pass
 how this plays out in the example below that divides by zero, then uses typeof(), isNaN()
 and isFinite() methods.
 
-```
+```javascript
 console.log(123/0); // Infinity
 console.log(-123/0); // -Infinity
 console.log(typeof(Infinity)); // number
@@ -310,7 +311,7 @@ To get a division remainder, use the modulus operator "%". The example below "sn
 value to the nearest increment amount. The value is 19 modulus 5 where the remainder is 4.
 The 4 is removed to bring the value to 15. Then the increment amount is added, bringing the value up to 20.
 
-```
+```javascript
 var value = 19,
 increment = 5,
 remainder;
@@ -330,7 +331,7 @@ The call to log count++ still shows 1 because the operation happens first, then 
 increment. The second logging statement prints 2 because the increment has taken place.
 The decrement operator "--" subtracts one just before or after an operation.
 
-```
+```javascript
 var count = 1;
 console.log(count++); // 1
 console.log(count); // 2
@@ -343,7 +344,7 @@ console.log(--count); // 1
 A common use for the increment operator is to drive a "for" loop. The example runs the
 loop from 99 down to 1;
 
-```
+```javascript
 var bottlesOfBeer = 99;
 for(var i = bottlesOfBeer; i > 0; i--){
 console.log(i + " bottles of beer on the wall");
@@ -354,7 +355,7 @@ Due to their brevity, there are some heinous uses for the increment and decremen
 operators that are confusing to read, debug and maintain. Take a look at the
 following horrible example and promptly forget you ever saw it.
 
-```
+```javascript
 var thbbft, billTheCat;
 achh = 1;
 thbbft = 1;
@@ -365,8 +366,7 @@ console.log(billTheCat); // 3
 
 In fact, Douglas Crockford suggests avoiding these two operators altogether and
 using assignment operators instead:
-
-```
+```javascript
 var count = 1;
 count += 1;
 console.log(count); // 2
@@ -380,7 +380,7 @@ Assignments are performed with a single equal "=" sign, where everything to the 
 the sign is placed into the variable on the left. You can prepend an operator to the equal
 sign to perform an operation and assign the result, all in one statement.
 
-```
+```javascript
 var answer = 23;
 answer += 5; // 28
 answer -= 8; // 20
@@ -398,7 +398,7 @@ finally assignment. Associativity is the direction that multiple identical opera
 evaluated. Associativity for addition "+" operators is left-to-right for example. The
 example below shows both precedence and associativity in action:
 
-```
+```javascript
 var answer = (1 + 2 + 3) * 4 + 5 - 6;
 console.log(answer); // 23
 ```
@@ -407,7 +407,7 @@ Here's a breakdown of the steps. First, addition within the parenthesis is perfo
 left to right, then multiplication, then the remaining addition and subtraction, all from left
 to right. The assignment to "answer" is made last of all.
 
-```
+```javascript
 (1 + 2 + 3) * 4 + 5 - 6;
 (3 + 3) * 4 + 5 - 6;
 6 * 4 + 5 - 6;
@@ -427,7 +427,7 @@ compared are the same type. Notice that the last line in the example below is fa
 because riskLevel, a number, is different from "textThreshold", a string. We recommend
 that you stick with the strict equality operator "===" for more predictable results.
 
-```
+```javascript
 var riskLevel = 5, threshold = 5, textThreshold = "5";
 console.log(riskLevel == threshold); // true
 console.log(riskLevel == textThreshold); // true
@@ -438,7 +438,7 @@ console.log(riskLevel === textThreshold); // false
 JavaScript also includes the usual suspects for comparison, i.e. not equal, greater than, less
 than, greater than or equal and less than or equal:
 
-```
+```javascript
 var riskLevel = 5, threshold = 5, max = 10;
 console.log(riskLevel !== max); // strict not-equal, true
 console.log(riskLevel > max); // greater than, false
@@ -454,7 +454,7 @@ determines if "foodTemp" is within a range greater than or equal to "minTemp" AN
 than or equal to "maxTemp". Then, "doNotEat" becomes true if "inDangerZone" OR
 "isPoisonous" is true.
 
-```
+```javascript
 var foodTemp = 50,
 minTemp = 41,
 maxTemp = 135,
@@ -470,7 +470,7 @@ The conditional operator "?" is a handy way to return a value based on a boolean
 single statement. The returned value, to the right of the conditional operator, can be any
 type.
 
-```
+```javascript
 var message = doNotEat ? "Eww, don't eat that" : "Munch away";
 console.log(message); // "Eww, don't eat that"
 ```
@@ -483,7 +483,7 @@ values false, 0, "" (empty string), null, undefined and NaN are falsy. All else 
 non-zero numbers, populated strings, arrays and objects. The example below defines "input" as
 an empty string. Because "input" is falsy, the conditional operator returns "no input".
 
-```
+```javascript
 var input = "";
 var message = input ? input: "no input";
 console.log(message); // "no input"
@@ -495,7 +495,7 @@ The rules for comparing two falsy values against one another are:
 - NaN is never equivalent to anything, including itself. Use isNaN() to check for NaN instead of using a comparison.
 Here are a few examples that compare falsy values:
 
-```
+```javascript
 // false zero and "" are equivalent
 console.log("" == false); // true
 console.log(0 == ""); // true
@@ -519,7 +519,7 @@ You can see from these examples that it's a lot safer to use strict comparison w
 possible. These comparisons now all return false because the types are different. Only the
 comparison of NaN with itself is counter intuitive.
 
-```
+```javascript
 // false zero and "" are equivalent
 console.log("" === false); // false
 console.log(0 === ""); // false
@@ -532,7 +532,8 @@ console.log(NaN === NaN); // false
 A common technique for getting the boolean equivalent of a variable is to use the
 negation operator twice. The variable "obj" below is a non-empty string and so
 should be "truthy". "obj" is string type, while the type of "!!obj" is boolean.
-```
+
+```javascript
 var obj = "test";
 console.log(typeof(obj)); // string
 console.log(typeof(!!obj)); // boolean
@@ -546,7 +547,7 @@ console.log(!!obj); // true
 The if statement evaluates a condition and executes statements if the condition is true. The
 statements enclosed in brackets of the optional else statement fire if the condition is false.
 
-```
+```javascript
 var low = 0,
 medium = 1,
 high = 2,
@@ -563,7 +564,7 @@ console.log("Risk is acceptable");
 If statements can be chained together to filter on multiple conditions, each failed
 condition falling through to another if statement.
 
-```
+```javascript
 var low = 0,
 medium = 1,
 high = 2,
@@ -583,7 +584,7 @@ While its possible to leave out curly braces to execute a single statement (see
 snippet below), but is considered bad practice that can easily introduce bugs for
 little benefit. If there is a blank, you may unintentionally change your logic.
 
-```
+```javascript
 if (risk > medium)
 console.log("Risk is high");
 else
@@ -598,7 +599,7 @@ case and executes statements associated with the case. If there are no matching 
 optional default statements are executed. The break statement makes sure that only the
 statements for the selected case are executed.
 
-```
+```javascript
 var low = 0,
 medium = 1,
 high = 2,
@@ -623,7 +624,7 @@ console.log("unknown risk level");
 Each case can actually contain its own expression. In the example below, "risk" does not
 match "medium AND sensitivity === low", so the default statement is executed.
 
-```
+```javascript
 var low = 0,
 medium = 1,
 high = 2,
@@ -649,7 +650,7 @@ console.log("unknown risk level");
 Multiple cases can be stacked so that if any of the cases match, the statements are
 executed. The example below logs "risk is acceptable" if cases "low" or "medium" match.
 
-```
+```javascript
 var low = 0,
 medium = 1,
 high = 2,
@@ -671,7 +672,8 @@ console.log("unknown risk level");
 
 Be careful to use break or return in case statements. Without breaks, the case is first
 matched, then all following cases are executed unconditionally.
-```
+
+```javascript
 var low = 0,
 medium = 1,
 high = 2,
@@ -698,7 +700,7 @@ console.log("unknown risk level");
 The while statement executes during the time a condition is true. The while loop below
 executes when tested at "406", "416" and "426":
 
-```
+```javascript
 var pressure = 406,
 maxDesignPressure = 427;
 while (pressure < maxDesignPressure) {
@@ -712,7 +714,7 @@ The do..while loop executes at least once and executes until a condition is true
 though the condition is reached immediately, the example below still executes one time
 before exiting.
 
-```
+```javascript
 var pressure = 427,
 maxDesignPressure = 427;
 do {
@@ -730,7 +732,7 @@ is smaller than "maxDesignPressure", we enter the loop and log the pressure valu
 time at the top of the loop, pressure is 427, not smaller than maxDesignPressure, and we
 exit the loop.
 
-```
+```javascript
 var maxDesignPressure = 427, pressure;
 
 for (pressure = 425; pressure < maxDesignPressure; pressure += 1) {
@@ -744,7 +746,7 @@ syntax is roughly: for(var prop in object) {}. Inside the loop, prop is the prop
 and object[prop] is the property value. Inside the loop, use hasOwnProperty() to check
 that the property belongs to the object and isn't inherited.
 
-```
+```javascript
 var reactor = {
 pressure: 0,
 maxPressure: 427
@@ -769,7 +771,7 @@ example below iterates backwards through a string until it reaches a blank. The 
 string does not need to be evaluated, so "break" pops us out of the loop and logs the
 result.
 
-```
+```javascript
 var sentence = "Get the last word",
 word = "",
 i,
@@ -788,7 +790,7 @@ Continue jumps back to the top without executing the remaining code in the loop.
 the break example above with continue instead of break, skips over the assignment to the
 variable "word" when there's a space. The result is the string without spaces.
 
-```
+```javascript
 var sentence = "Get the last word",
 word = "",
 i,
@@ -808,7 +810,7 @@ tends to obscure the flow of control. Instead, consider arranging your logic so 
 continue isn't required in the first place. The example below checks to make sure
 that "letter" isn't blank before adding the next word.
 
-```
+```javascript
 var sentence = "Get the last word",
 word = "",
 i,
