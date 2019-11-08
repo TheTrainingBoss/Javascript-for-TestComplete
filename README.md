@@ -1,5 +1,8 @@
-# Table of Content
+![](media/JSForTC.png)
 
+Are you a Testcomplete Tester wishing you can use JavaScript for scripting in TestComplete? This course is for you! The goal of this course is to introduce you to the javascript language and how it can be used so that you can start using it's power inside of TestComplete.
+
+# Table of Content
 
 [Introduction](./Introduction/readme.md)
 ------------
