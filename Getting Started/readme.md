@@ -24,7 +24,7 @@ This example shows how to configure the Safari browser console. From the "Gear" 
 
 Then, from the Develop menu, select Show Error Console. Take it for a quick test drive by entering the JavaScript code below:
 
-```
+```javascript
 alert('Hello Safari');
 ```
 
@@ -36,7 +36,7 @@ Press Enter to execute the code. An alert dialog should display.
 
 This example shows how to configure the Chrome browser console. From the "Wrench" icon	, **select Tools > JavaScript Console.** Test the console by entering the JavaScript code below:
 
-```
+```javascript
 alert('Hello Chrome);
 ```
 
@@ -52,7 +52,7 @@ The Firebug console for the Firefox browser. From the Firefox menu **select Tool
 
 Click the Restart now link to reload the browser. Click the "Bug" icon	to show the console. Test the console by entering the JavaScript code below:
 
-```
+```javascript
 alert('Hello Firefox");
 ```
 
@@ -66,7 +66,7 @@ This example shows how to configure the Internet Explorer browser console. From 
 
 Then, from the Develop menu, select Show Error Console. Take it for a quick test drive by entering the JavaScript code below:
 
-```
+```javascript
 alert('Hello IE');
 ```
 
@@ -86,7 +86,7 @@ See the Console Debugging topic for more details.
 
 If you want your JavaScript to interact with an HTML page, include a "script" tag with JavaScript directly in the HTML or in an external file. The "script" tag in the HTML page below has only a single inline console.log() statement, but you can add as many lines as you need.
 
-```
+```html
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -105,7 +105,7 @@ console.log('JavaScript called while loading the page');
 
 To define JavaScript code in another file, define the src attribute with the path of the JavaScript file.
 
-```
+```html
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -123,7 +123,7 @@ To define JavaScript code in another file, define the src attribute with the pat
 
 You can write directly to the browser using the built-in document object write() method. The following JavaScript pushes standard HTML out to the browser.
 
-```
+```html
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -147,7 +147,7 @@ Rendered in the browser, the HTML produced by the JavaScript looks like the scre
 ![](../media/image8.png)
 
 If you want to change an element in the HTML, use the browser document's getElementById() method and pass the ID of the element. For example, the HTML below snags the "Last Updated" element and assigns the current date.
-```
+```javascript
 document.getElementById('lastUpdate').innerHTML = Date();
 ```
 
@@ -160,7 +160,7 @@ The JavaScript executes immediately and updates the text.
 1.	Configure a console for your favorite browser.
 2.	Copy the code below into the console and execute it.
 
-```
+```javascript
 console.error("I'm eighteen years behind in my ironing"); 
 console.log("-Phyllis Diller");
 ```
@@ -171,7 +171,7 @@ The output should look something like the screenshot below.
 
 3.	Create a text file on disk and name it "mypage.html". Copy in the code below to the file.
 
-```
+```html
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -186,13 +186,13 @@ The output should look something like the screenshot below.
 ```
 4.	Replace the comment "<!-- add code here -->" with the code below. Notice that the "src" attribute points to "myscript.js".
 
-```
+```html
 <script type="text/javascript" src="myscript.js"></script>
 ```
 
 5.	Add a second file to the same location as "mypage.html" and name it "myscript.js". Add the code below to the "myscript.js" file.
 
-```
+```javascript
 console.warn("Housework can't kill you, but why take a chance?"); 
 console.log("Phyllis Diller");
 ```
