@@ -21,7 +21,7 @@ Notice the "use strict" added as the first line of the function. This is a best-
 eliminate some of the flakier aspects of the JavaScript language and should be used inside
 all of your functions.
 
-```
+```javascript
 // define a function
 function myFunction() {
 "use strict";
@@ -32,7 +32,7 @@ myFunction(); // call the function
 
 Functions can accept one or more parameters and may also return a value to the caller.
 
-```
+```javascript
 function myFunction(param1, param2, param3) {
 "use strict";
 return 123;
@@ -43,7 +43,7 @@ Functions are objects and can be assigned to a variable. In the example below,
 "compliment" is a variable that holds a function. Passing the variable through the typeof
 operator verifies that "compliment" is in fact, a function.
 
-```
+```javascript
 var compliment = function () {
 "use strict";
 var compliments = [
@@ -67,7 +67,7 @@ functions or even pass the variable back out of a function. The example below pa
 demonstrating that you can pass the function variable. Finally, "attaBoy" can be called
 simply by appending parenthesis.
 
-```
+```javascript
 var compliment = function () {
 "use strict";
 var compliments = [
@@ -94,7 +94,7 @@ The number of arguments passed to the function does not need to match the number
 parameters. Extra arguments are ignored, too few leave parameters "undefined". The
 "getTotal()" method below only uses the "discount" parameter if it is defined:
 
-```
+```javascript
 function getTotal(price, qty, discount) {
 "use strict";
 var total;
@@ -111,7 +111,7 @@ The return statement sends back a value to the caller and marks the exit point o
 function. The "getTotal()" method returns immediately with a zero if the first two
 parameters are zero, otherwise the function returns the total amount:
 
-```
+```javascript
 function getTotal(price, qty, discount) {
 "use strict";
 var total;
@@ -134,7 +134,7 @@ You don't have to define parameters in advance or know how many parameters there
 Functions have an arguments property that contains an array of everything passed to the
 function. You can use the argument's length property to iterate the array.
 
-```
+```javascript
 function feedFishies() {
 "use strict";
 var numberOfFishies = arguments.length,
@@ -161,7 +161,7 @@ callbacks. Callbacks are used to notify a function from within another function.
 repeatedly while looping when a loop counter variable lands on a multiple of 10. The
 example checks that the callback variable is a "function" type before making each call.
 
-```
+```javascript
 // function that accepts a callback reference
 function process(callback) {
 "use strict";
@@ -188,7 +188,7 @@ process(myCallback);
 To create an anonymous function, leave out the function name. The example below assigns
 an anonymous function to the variable "process".
 
-```
+```javascript
 var process = function () {
 "use strict";
 console.log("processing");
@@ -201,7 +201,7 @@ add a second set of parenthesis to invoke the function. This structure is often 
 contain code so that will not leak out into the global scope. The new parenthesis are bold
 and red in the example below.
 
-```
+```javascript
 (function () {
 "use strict";
 console.log("processing");
@@ -223,7 +223,7 @@ would be true even if the assignment took place inside a function or object.
 so is part of the global scope as well. "myPrivateVariable" is declared using the var
 keyword inside the function and so is only visible inside the function.
 
-```
+```javascript
 myGlobal = "undeclared global";
 var myOtherGlobal = "declared global";
 // available anywhere
@@ -244,7 +244,7 @@ points to the object.
 
 Take a look at the following code fragment and try to predict the value of this in each
 
-```
+```javascript
 01 console.log(this);
 02
 03 function myFunc() {
@@ -282,7 +282,7 @@ The example below creates two objects using literal notation. The speak() functi
 to the this.sound property without specifying what "this" is. All functions have a call()
 method. The call() method from speak is used to pass the dog and cat objects.
 
-```
+```javascript
 (function () {
 "use strict";
 var dog = {
@@ -301,7 +301,7 @@ speak.call(cat, null); // Meow
 
 You can pass a list of one or more parameters to call().
 
-```
+```javascript
 (function () {
 "use strict";
 var dog = {
@@ -324,7 +324,7 @@ The apply() method passes parameters in a single array. You only need to replace
 with apply() and pass the parameters as a single array. The function signature does not
 need to change.
 
-```
+```javascript
 speak.apply(dog, ["peanut", 2]);
 speak.apply(cat, ["fluffy", 5]);
 ```
@@ -336,7 +336,7 @@ variable can be used before it is defined. JavaScript automatically hoists every
 declaration to the top of the function. A variable that is simply undeclared generates an
 error:
 
-```
+```javascript
 function playTune() {
 "use strict";
 console.log("Volume is " + volume);
@@ -347,7 +347,7 @@ playTune(); // ReferenceError: "Volume is not defined"
 Now take a look at this example where "volume" is declared after its used in a logging
 statement:
 
-```
+```javascript
 function playTune() {
 "use strict";
 console.log("Volume is " + volume);
@@ -361,7 +361,7 @@ uninitialized variable. While the declaration is moved to the top, the variable 
 does not get hoisted. Re-writing the function to match its actual behavior looks more like
 this example, with the declaration up top, and the assignment in its original location:
 
-```
+```javascript
 function playTune() {
 "use strict";
 var volume;
@@ -375,7 +375,7 @@ JavaScript looks like a C-family language, JavaScript scoping rules are entirely
 languages use block level scoping where anything inside of curly braces {} has its
 own scope. Take a look at the following pseudo-code:
 
-```
+```javascript
 playTune()
 {
 var volume = 1;
@@ -394,7 +394,7 @@ Using block scoping rules, the output is 1, 7, 1. The declaration inside the "if
 only in scope within the curly braces. JavaScript uses function level scoping. "volume" is
 hoisted to a single definition at the top of the function. The output is now 1, 7, 7.
 
-```
+```javascript
 01 function playTune() {
 02 "use strict";
 03
@@ -413,7 +413,7 @@ By wrapping a section of code with a self-invoking anonymous function, we get th
 of block level scoping. The example below now outputs 1 at line 06, 7 inside the
 anonymous function at line 11 and 1 again, outside the anonymous function at line 14.
 
-```
+```javascript
 01 function playTune() {
 02 "use strict";
 03
@@ -442,7 +442,7 @@ is "closed in" to the inner function. Functions run in the scope where they're d
 where the function is executed, so the outer function variables come along for the ride
 during the entire lifetime of the inner function.
 
-```
+```javascript
 function outer() {
 "use strict";
 var localVar = 123;
