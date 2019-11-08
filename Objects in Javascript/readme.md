@@ -22,7 +22,7 @@ make object oriented programming in JavaScript possible.
 To create an object, you first define a function to "declare" the object, then use the "new"
 keyword to create an instance of the object.
 
-```
+```javascript
 // declare the object
 function Product() {
 "use strict";
@@ -38,7 +38,7 @@ You can also create an object using literal notation where property names and va
 enclosed in curly braces. Notice that each property name is separated to the value by a
 colon ":". Objects are contained in pairs of curly braces "{ }" and arrays are bracketed "[ ]".
 
-```
+```javascript
 var falafel = {
 "eventboard": {
 "version": "1",
@@ -64,7 +64,7 @@ current execution context, i.e. the object itself. In the example below, "Produc
 with a "quantity" property initialized with the number '123'. The body of the function acts
 as the object constructor.
 
-```
+```javascript
 function Product() {
 "use strict";
 console.log("constructor");
@@ -79,7 +79,7 @@ console.log(product.quantity); // outputs '123'
 Methods are just properties that happen to be functions. The example below assigns an
 anonymous method to the "doubleQuantity" property of Product.
 
-```
+```javascript
 function Product() {
 "use strict";
 this.quantity = 123;
@@ -97,7 +97,7 @@ example below places "quantity" within the local scope of "Product". The "quanti
 property can be seen by the "doubleQuantity()" method but not later in the attempt to use
 "quantity" outside the object.
 
-```
+```javascript
 function Product() {
 "use strict";
 var quantity = 123;
@@ -115,7 +115,7 @@ To simulate accessors, create methods of the object that surface local variables
 example adds "getQuantity()" and "setQuantity(value)" methods used to access the private
 variable "quantity" from the Product instance.
 
-```
+```javascript
 function Product() {
 "use strict";
 var quantity = 123;
@@ -140,7 +140,7 @@ Each object has a prototype property used to attach methods and properties, even
 the object has been defined. The example below includes an "order()" method that adds
 an amount to the Product's "quantity" property.
 
-```
+```javascript
 function Product() {
 "use strict";
 this.quantity = 10;
@@ -163,7 +163,7 @@ constructor are copied for each instance. This second example moves "this.quanti
 property to the prototype. Now the "quantity" is shared among instances and the amount
 is cumulative.
 
-```
+```javascript
 function Product() {
 "use strict";
 }
@@ -183,7 +183,7 @@ console.log(product2.quantity); // outputs 115
 Be aware that even built-in JavaScript objects can be extended using prototypes. The
 example below adds a new "howdy" method to the built-in String object.
 
-```
+```javascript
 String.prototype.howdy = function () {
 "use strict";
 alert('Howdy from Falafel');
@@ -200,7 +200,7 @@ prototype and all the object's methods and properties come along for the ride. I
 example, the "Descendant" object is assigned an instance of "MyObject" and is now able
 to call the inherited "greet()" method.
 
-```
+```javascript
 function MyObject() {
 "use strict";
 }
@@ -221,7 +221,7 @@ Prototypes form a chain that travel upward to Object, the ultimate parent of all
 objects. You can walk the chain using the Object.getPrototypeOf() method to get a feel
 for how the chain is structured.
 
-```
+```javascript
 function MyObject() {
 "use strict";
 }
@@ -254,7 +254,7 @@ context at any one time. Note that the "use strict" directive has been left out 
 so that the this value will be defined, otherwise, strict mode will cause this to be
 undefined.
 
-```
+```javascript
 function MyObject() {
 "use strict";
 console.debug(this); // outputs MyObject
@@ -272,7 +272,7 @@ You can assign a specific "this" by using the function object call() method. Pas
 in the first parameter to call(). The example below calls the same "whoAmI" function run in
 the context of each object in the hierarchy of .
 
-```
+```javascript
 function MyObject() {
 "use strict";
 }
@@ -304,7 +304,7 @@ Any parameters after the this context object are parameters to the function. The
 below passes two additional parameters to greet() that define a "count" of "sound"
 repetitions and a "comment" that is output after the "sounds.
 
-```
+```javascript
 function Dog() {
 "use strict";
 this.sound = "Bark!";
@@ -331,7 +331,7 @@ The output again shows this and parameters for each call.
 There's a method similar to apply() method works like call() but passes an array of
 parameters. The code below uses apply() and is equivalent to the previous example.
 
-```
+```javascript
 greet.apply(new Dog(), [3, "good doggee"]);
 greet.apply(new Cat(), [2, "good kitteh"]);
 ```
@@ -342,7 +342,7 @@ You may want to create namespaces to organize your objects into named scopes. Th
 example below creates a "Falafel" namespace, then adds a "Product" object to the
 namespace.
 
-```
+```javascript
 var Falafel = {};
 Falafel.Product = function () {
 "use strict";
@@ -354,7 +354,7 @@ var product = new Falafel.Product();
 You can organize large sets of objects into nested namespaces using objects to represent
 each namespace:
 
-```
+```javascript
 var Falafel = {};
 Falafel.EventBoard = {};
 Falafel.EventBoard.Conference = function (conferenceName) {
@@ -374,7 +374,7 @@ You can replace an existing method by adding the same name method to a descendan
 prototype. This simply hides the method of the ancestor object. In this example, the "greet
 ()" method is overwritten with the descendants "greet()" method.
 
-```
+```javascript
 function MyObject() {
 "use strict";
 this.greet = function () {
@@ -397,7 +397,7 @@ If you move the "greet()" method out into the prototype, it can be called from t
 descendant method. In the "Descendant" object's "greet()" method, MyObject.greet() is
 called before the rest of the implementation.
 
-```
+```javascript
 function MyObject() {
 "use strict";
 }
