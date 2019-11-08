@@ -13,7 +13,7 @@
 --------------
 [Objects in Javascript](Objects&#32;in&#32;Javascript/readme.md)
 ---------------------
-Regular Expressions
+[Regular Expressions](Regular&#32;Expressions/readme.md)
 -------------------
 Date and Time Handling
 -----------------------
