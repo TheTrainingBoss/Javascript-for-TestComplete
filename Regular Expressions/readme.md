@@ -245,7 +245,7 @@ In JavaScript, you can use the RegExp object test() method to determine if a pat
 in a particular text string. The example below creates the simplest type of regular
 expression that matches the literal "Bigfoot" against a string that is also "Bigfoot".
 
-```
+```javascript
 var myString = "Bigfoot",
 expression = new RegExp("Bigfoot"),
 foundBigfoot = expression.test(myString); // true
@@ -255,7 +255,7 @@ The preferred declaration syntax is to use literal notation, bounded by forward 
 You can assign the regular expression literal to a variable or call the test() method directly
 from it.
 
-```
+```javascript
 var myString = "Bigfoot",
 expression = /Bigfoot/,
 foundBigfoot;
