@@ -11,7 +11,7 @@
 ------------------------
 [Native Objects](Native&#32;Objects/readme.md)
 --------------
-Objects in Javascript
+[Objects in Javascript](Objects&#32;in&#32;Javascript/readme.md)
 ---------------------
 Regular Expressions
 -------------------
