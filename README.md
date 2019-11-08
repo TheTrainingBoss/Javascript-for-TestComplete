@@ -15,9 +15,9 @@
 ---------------------
 [Regular Expressions](Regular&#32;Expressions/readme.md)
 -------------------
-Date and Time Handling
+[Date and Time Handling](Date&#32;and&#32;Time&#32;Handling/readme.md)
 -----------------------
-Error Handling
+[Error Handling](Error&#32;Handling/readme.md)
 --------------
 Debugging
 ---------
