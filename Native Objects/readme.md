@@ -318,7 +318,7 @@ console.log(element, index, array);
 
 ### Array Element Types
 
-Array elements don't need to be the same type. You can use typeof(<element>) to
+Array elements don't need to be the same type. You can use typeof( **element**) to
 determine how each element should be handled.
 
 ```
@@ -538,7 +538,7 @@ Math.floor() methods to produce a random scale value.
 
 ![](../media/image21.jpg)
 
-The code below includes the HTML with a single <canvas> element and an onload event
+The code below includes the HTML with a single **canvas** element and an onload event
 for the body of the page that fires the drawing logic.
 
 ```
