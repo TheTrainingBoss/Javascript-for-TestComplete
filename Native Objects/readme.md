@@ -14,7 +14,8 @@ and trigonometric functions.
 
 The Number wrapper object has properties that stake out the upper and lower numeric
 range.
-```
+
+```javascript
 console.log(Number.MIN_VALUE); // 5e-324
 console.log(Number.MAX_VALUE); // 7976931348623157e+308
 console.log(Number.POSITIVE_INFINITY); //Infinity
@@ -23,7 +24,8 @@ console.log(Number.NEGATIVE_INFINITY); //-Infinity
 
 The Number object also has methods that return string representations of the number.
 Here's a sampling:
-```
+
+```javascript
 var myNumber = 123;
 console.log(myNumber.toExponential()); // 23e+2
 console.log(myNumber.toFixed(5)); // 123.00000
@@ -37,7 +39,7 @@ demand. You can call String object methods from variables assigned string litera
 specifically creating a new String object. The example below calls the String object
 toLowerCase() method on the "status" variable.
 
-```
+```javascript
 var status = 'Published';
 if (status.toLowerCase() === 'published') {
 console.log("Published");
@@ -46,7 +48,7 @@ console.log("Published");
 
 You can even call the method directly on the literal itself:
 
-```
+```javascript
 var isPublished = 'Published'.toLowerCase() === 'published';
 ```
 
@@ -59,7 +61,7 @@ indexing syntax, e.g. "my string"[index]. Here's an example that reverses the ch
 string by iterating one character at a time, from the end of the string backwards to the
 starting character (not an efficient algorithm, but illustrates length and charAt()).
 
-```
+```javascript
 var heading = "Turned Around",
 newString = "",
 i;
@@ -79,7 +81,7 @@ string, retrieve the first letter by calling charAt(0), then call toUpperCase() 
 character. The substr() method returns the remainder of the string, starting with the
 second character.
 
-```
+```javascript
 var name = "falafel",
 capitalized = name.charAt(0).toUpperCase() + name.substr(1);
 console.log(capitalized); // outputs "Falafel"
@@ -88,7 +90,7 @@ console.log(capitalized); // outputs "Falafel"
 The indexOf() and lastIndexOf() methods return an index of a substring within a string or
 -1 if nothing is found.
 
-```
+```javascript
 var bruceTheShark = "I am a nice shark, not a mindless eating machine." +
 "If I am to change this image, I must first change myself. " +
 "Fish are friends, not food.",
@@ -100,7 +102,7 @@ While indexOf() and lastIndexOf() simply look for a string, search() looks for s
 satisfy a regular expression. This example looks for at least five occurrences of "swimming"
 within a string.
 
-```
+```javascript
 var isIrritating, regex, expression, dory;
 dory = "Just keep swimming. Just keep swimming. " +
 "Just keep swimming, swimming, swimming.";
@@ -117,7 +119,7 @@ using regular expressions in JavaScript.
 match() also takes a regular expression but returns an array of matching strings. The
 example below writes out the single matching string to the console log.
 
-```
+```javascript
 var regex, matches, i,
 expression = /(((?!\bswimming\b).)*\bswimming\b){5,}/g,
 dory = "Just keep swimming. Just keep swimming. " +
@@ -136,7 +138,7 @@ Finally, split() takes a string or a regular expression and returns an array of 
 a workhorse useful for parsing query strings, version numbers, key-value pairs, paths, date
 strings and more.
 
-```
+```javascript
 var version = "1.0.32.574",
 versionParts = version.split(".");
 console.log("Major:" + versionParts[0] +
@@ -152,7 +154,7 @@ Array objects contain lists of elements. To declare an array literal, assign a s
 comma-delimited elements enclosed by square brackets. An array's length property is a
 count of the elements in the array that can be used to iterate the array.
 
-```
+```javascript
 var sizes = ["Small", "Medium", "Large"],
 i;
 console.log(sizes[0]); // "Small"
@@ -170,7 +172,7 @@ Arrays are dimensioned based on the index of the element at the end of the array
 take the sizes[] array and assign an element to the fifth index, as shown below, the array
 elements will be "Small", "Medium", "Large", undefined and "Giant".
 
-```
+```javascript
 var sizes = ["Small", "Medium", "Large"];
 sizes[4] = "Giant";
 ```
@@ -186,7 +188,7 @@ array in its place. At this point, the array elements are "Small", "Medium", "Ve
 "Small" element is shifted from the start of the array and "Tall" is unshifted (i.e. prepended)
 to the start of the array.
 
-```
+```javascript
 var sizes = ["Small", "Medium", "Large"],
 large,
 small,
@@ -211,7 +213,7 @@ will start, then the number of elements to be replaced and finally the element(s
 be inserted. In the example, "Grande" replaces the second element. Now the array
 elements would be "Tall", "Grande", "Venti".
 
-```
+```javascript
 // replace "Medium" from the middle of the array
 // start index, number of elements, replacement element(s)
 sizes.splice(1, 1, "Grande");
@@ -220,7 +222,7 @@ sizes.splice(1, 1, "Grande");
 To insert more elements, pass more arguments to the splice() method. Now the array
 elements consist of "Tall", "Tallish Grande", "Grande", "Venti".
 
-```
+```javascript
 // replace second element with two elements.
 // elements will now be "Tall", "Tallish Grande", "Grande", "Venti"
 sizes.splice(1, 1, "Tallish Grande", "Grande");
@@ -230,7 +232,7 @@ To delete elements, call splice() and only specify the start and number of eleme
 example below starts from the second element and removes three elements. The array
 now has only the single "Tall" element.
 
-```
+```javascript
 // delete three elements
 // only the "Tall" element remains
 sizes.splice(1, 3);
@@ -244,7 +246,7 @@ the slice() method and pass the starting index and the number of elements to ext
 you want to easily present an array as a single comma-delimited string, call the join()
 method.
 
-```
+```javascript
 var i, sizes = ["Tall", "Grande", "Venti"],
 allSizes, starbucksSizes;
 // add arrays or elements
@@ -281,7 +283,7 @@ filter() forEach() every() map() some() reduce()
 For example, the forEach() method runs a function against each element in the array.
 Without using one of these iteration methods, the array must be iterated by index:
 
-```
+```javascript
 var i, sizes = ["Small", "Medium", "Large"];
 for (i = 0; i < sizes.length; i += 1) {
 console.log(i + ": " + sizes[i]);
@@ -293,7 +295,7 @@ function logElement() to the forEach() method. The signature of forEach() expect
 parameters for each element, the index of the element within the array and the array as a
 whole.
 
-```
+```javascript
 var sizes = ["Small", "Medium", "Large"];
 function logElement(element, index, array) {
 "use strict";
@@ -308,7 +310,7 @@ The screenshot below shows the output.
 
 You can also use an anonymous function as the forEach() parameter.
 
-```
+```javascript
 var sizes = ["Small", "Medium", "Large"];
 sizes.forEach(function (element, index, array) {
 "use strict";
@@ -321,7 +323,7 @@ console.log(element, index, array);
 Array elements don't need to be the same type. You can use typeof( **element**) to
 determine how each element should be handled.
 
-```
+```javascript
 var i, misc = [1, "two", false, new Date()],
 numberOfItems = misc.length;
 for (i = 0; i < numberOfItems; i += 1) {
@@ -342,7 +344,7 @@ top level elements while the inner "for" loop iterates the elements within the a
 JavaScript allows you to create "jagged arrays" where the number of elements in each
 array can vary.
 
-```
+```javascript
 var i, x, sizes = ["Small", "Medium", "Large"],
 drinks = [
 ["Espresso", "Americano"],
@@ -365,7 +367,7 @@ The console output appears in the screenshot below:
 The JavaScript Date object has basic functions for manipulating dates and times. The
 example below displays today's date in the computer's local formatting conventions:
 
-```
+```javascript
 var today = new Date();
 console.log(today.toDateString());
 ```
@@ -381,7 +383,7 @@ number generator. All of the methods and constants are static, so reference them
 off the Math object without creating an instance. Here's a short example that calculates
 the volume of a sphere using the Math constant PI and the Math.pow() method.
 
-```
+```javascript
 var radius = 5,
 volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
 ```
@@ -392,7 +394,7 @@ The Math constants include Euler's constant E, natural logs of 2 and 10, the bas
 the square root of 2 the square root of one half and PI. The example below outputs the
 Math constants to the console log.
 
-```
+```javascript
 // Euler's constant, base of natural logs
 console.log("Math.E: " + Math.E);
 // natural logarithm of 2
@@ -420,7 +422,7 @@ number's sign and by getting the minimum and maximum of two numbers.
 The Math.abs() method strips the sign from a number and returns the number's absolute
 value. If the number is null Math.abs() returns zero.
 
-```
+```javascript
 console.log(Math.abs(-5)); // 5
 console.log(Math.abs(5)); // 5
 console.log(Math.abs(null)); // zero
@@ -433,7 +435,7 @@ parameter. Math.floor() returns the largest integer less than or equal to a numb
 in as a parameter. The code below produces a table that shows the effect of each
 function.
 
-```
+```javascript
 var i, numbers = [12.49, 12.5, 12.51, -12.5];
 console.log("Number\tround()\tceil()\tfloor()");
 for (i = 0; i < numbers.length; i += 1) {
@@ -451,7 +453,7 @@ The table lists number with border values and shows the effect of each Math func
 The Math min() and max() functions return the minimum or maximum value from a list of
 value parameters.
 
-```
+```javascript
 Math.min(12, 23, 43, -1, 0); // -1
 Math.max(12, 23, 43, -1, 0); // 43
 ```
@@ -461,7 +463,7 @@ We're not interested in using apply() to change scope here, just as a quick way 
 the array to the min() and max() functions. The example below calls the apply() against
 both min() and max(), passing the array of numbers.
 
-```
+```javascript
 var numbers = [12, 23, 43, -1, 0];
 Math.min.apply(null, numbers); // -1
 Math.max.apply(null, numbers); // 43
@@ -474,7 +476,7 @@ get something useful, you need to amplify the number into a range of numbers tha
 want. For example, to get a random number between 1 and 100, multiply the amount by
 100 and add one to the result. Adding one ensures you will never get back zero.
 
-```
+```javascript
 var oneToAHundred = Math.floor(Math.random() * 100) + 1;
 ```
 
@@ -484,14 +486,14 @@ JavaScript handles exponents and logarithms through Math functions pow(), exp() 
 log(). Math.pow() raises the power of a number by a given exponent. The example below
 raises the base number 2 by an exponent of 10 to return 1024.
 
-```
+```javascript
 console.log(Math.pow(2, 10)); // 1024
 ```
 
 Here's a slightly more involved example that calculates monthly payments given a
 principal, an interest rate and a number of payment periods.
 
-```
+```javascript
 var principal = 350000,
 term = 30,
 interestRate = 0.04,
@@ -505,7 +507,7 @@ console.log(payment);
 Math.log() produces the natural logarithm of a number. The example below uses Math.
 pow() to produce a result and Math.log() to reverse the process.
 
-```
+```javascript
 var base = 5,
 exponent = 2,
 result = Math.pow(base, exponent);
@@ -516,7 +518,7 @@ console.log(Math.log(result) / Math.log(base)); // 2
 Math.exp() is similar to Math.pow() except that the base is always Euler's constant
 (2.718...)
 
-```
+```javascript
 console.log(Math.exp(2)); // 7.389...
 ```
 
@@ -541,7 +543,7 @@ Math.floor() methods to produce a random scale value.
 The code below includes the HTML with a single **canvas** element and an onload event
 for the body of the page that fires the drawing logic.
 
-```
+```javascript
 function draw() {
 "use strict";
 var canvas = document.getElementById("canvas"),
