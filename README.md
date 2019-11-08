@@ -19,5 +19,5 @@
 -----------------------
 [Error Handling](Error&#32;Handling/readme.md)
 --------------
-Debugging
+[Debugging](Debugging/readme.md)
 ---------
