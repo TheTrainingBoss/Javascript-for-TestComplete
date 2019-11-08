@@ -9,7 +9,7 @@
 -----------
 [Functions and Parameters](./Functions&#32;and&#32;Parameters/readme.md)
 ------------------------
-Native Objects
+[Native Objects](Native&#32;Objects/readme.md)
 --------------
 Objects in Javascript
 ---------------------
